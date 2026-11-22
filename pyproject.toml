@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blender-shard-render"
+version = "0.1.0"
+description = "Render Blender animations with parallel background processes, verify every frame, re-render the broken ones."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Breif7" }]
+keywords = ["blender", "render", "cli", "parallel", "render-farm"]
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.urls]
+Homepage = "https://github.com/Breif7/blender-shard-render"
+Issues = "https://github.com/Breif7/blender-shard-render/issues"
+
+[project.scripts]
+blender-shard-render = "shardrender:main"
+
+[tool.setuptools]
+py-modules = ["shardrender", "shardrender_worker"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
